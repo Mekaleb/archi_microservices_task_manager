@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Liens vers les fichiers CSS générés par Webpack Encore -->
+    {{ encore_entry_link_tags('app') }}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+<body>
+<div id="flash-messages" class="flash-messages">
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% block body %}{% endblock %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            const flashMessages = document.querySelectorAll('.flash-success, .flash-error');
+            flashMessages.forEach(function(message) {
+                message.style.transition = 'opacity 0.5s ease-out';
+                message.style.opacity = 0;
+                setTimeout(function() {
+                    message.remove();
+                }, 500); // Le message est complètement supprimé après la disparition
+            });
+        }, 3000); // Messages disparaissent après 5 secondes
+    });
+</script>
+<!-- Scripts générés par Webpack Encore -->
+{{ encore_entry_script_tags('app') }}
+
+{% block javascripts %}
+{% endblock %}
+</body>
+</html>
