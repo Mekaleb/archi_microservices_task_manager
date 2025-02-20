@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="form-container">
+        <div class="form-box">
+            <h2 class="form-title">Créer une nouvelle tâche</h2>
+            {{ form_start(form, {'attr': {'class': 'task-form'}}) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
