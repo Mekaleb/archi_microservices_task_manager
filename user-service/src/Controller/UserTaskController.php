@@ -28,7 +28,7 @@ class UserTaskController extends AbstractController
             $data = $form->getData();
 
             // Appel à task-service
-            $response = $this->httpClient->request('POST', 'http://127.0.0.1:8000/api/tasks', [
+            $response = $this->httpClient->request('POST', 'http://127.0.0.1:8001/api/tasks', [
                 'headers' => [
                     'Content-Type' => 'application/ld+json',
                 ],
