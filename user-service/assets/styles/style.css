@@ -36,7 +36,7 @@
     font-size: 16px;
 }
 
-.task-form label {
+.task-form label, .user-form label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
@@ -47,7 +47,7 @@
 }
 
 /* Style des champs du formulaire */
-.task-form input,
+.task-form input, .user-form input,
 .task-form textarea {
     width: 90%;
     padding: 8px;
