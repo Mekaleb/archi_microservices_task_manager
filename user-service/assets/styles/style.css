@@ -24,7 +24,7 @@
     font-weight: bold;
 }
 
-.task-form button {
+.task-form button, .user-form button {
     width: 100%;
     padding: 10px;
     margin-top: 15px;
@@ -36,10 +36,17 @@
     font-size: 16px;
 }
 
+.task-form div div, .user-form div div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px; /* Espacement entre le label et le champ */
+    margin-bottom: 10px;
+}
+
 .task-form label, .user-form label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+    width: 50px; /* Ajuste la largeur selon tes besoins */
+    text-align: left;
 }
 
 .task-form button:hover {
@@ -47,9 +54,9 @@
 }
 
 /* Style des champs du formulaire */
-.task-form input, .user-form input,
+.task-form input, .user-form input, .user-form select,
 .task-form textarea {
-    width: 90%;
+    flex: 1;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
